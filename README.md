@@ -12,12 +12,19 @@ This repository contains commit activity from my work projects to ensure they ap
 
 ## Automation Options
 
-### Option 1: Manual Sync (Simplest)
+### Option 1: One-Time Historical Backfill
 ```bash
+# Run once to capture ALL your historical work commits
+./backfill-history.sh
+```
+
+### Option 2: Ongoing Sync (90 days)
+```bash
+# For regular ongoing sync of recent commits
 ./auto-sync.sh
 ```
 
-### Option 2: Command Line Tool
+### Option 3: Command Line Tool
 ```bash
 # Setup once
 ./setup-automation.sh
@@ -26,13 +33,13 @@ This repository contains commit activity from my work projects to ensure they ap
 sync-work-activity
 ```
 
-### Option 3: Automatic Git Hooks (Fully Automated)
+### Option 4: Automatic Git Hooks (Fully Automated)
 ```bash
 # Setup once - automatically syncs after every work commit
 ./git-hook-setup.sh
 ```
 
-### Option 4: Daily Cron Job
+### Option 5: Daily Cron Job
 Add to crontab for daily sync at 6 PM:
 ```bash
 0 18 * * * /Users/akar/Documents/GitHub/work-activity-tracker/auto-sync.sh
