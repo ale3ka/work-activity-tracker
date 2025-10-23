@@ -1,6 +1,6 @@
 # Work Activity Tracker
 
-This repository tracks my work contributions for GitHub profile visibility.
+This repository automatically tracks my work contributions for GitHub profile visibility.
 
 ## Purpose
 This repository contains commit activity from my work projects to ensure they appear in my personal GitHub contribution graph, while keeping the actual work code in the appropriate work repositories.
@@ -9,6 +9,34 @@ This repository contains commit activity from my work projects to ensure they ap
 - HelloFresh Data Engineering projects
 - Materialized Views and Data Pipelines
 - Analytics and Business Intelligence work
+
+## Automation Options
+
+### Option 1: Manual Sync (Simplest)
+```bash
+./auto-sync.sh
+```
+
+### Option 2: Command Line Tool
+```bash
+# Setup once
+./setup-automation.sh
+
+# Then use anytime
+sync-work-activity
+```
+
+### Option 3: Automatic Git Hooks (Fully Automated)
+```bash
+# Setup once - automatically syncs after every work commit
+./git-hook-setup.sh
+```
+
+### Option 4: Daily Cron Job
+Add to crontab for daily sync at 6 PM:
+```bash
+0 18 * * * /Users/akar/Documents/GitHub/work-activity-tracker/auto-sync.sh
+```
 
 ## Note
 This repository contains only activity logs and metadata - the actual work code remains in the respective work repositories.
